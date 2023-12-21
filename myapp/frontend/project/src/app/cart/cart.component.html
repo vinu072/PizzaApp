@@ -1,0 +1,55 @@
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div class="row">
+      <div class="col-12">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Cart Items</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let item of getCartItems()">
+                  {{item.name}} :{{item.price| currency:'INR'}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Pizzas Total</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ Total() | currency:'INR' }}</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total Price of Ingredients</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ totalPrice | currency: 'INR' }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Grand Total</h4>
+            <h3>{{ GrandTotal() | currency: 'INR' }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-6">
+        <button class="btn btn-danger empty-cart-btn" (click)="onEmptyCartClick()">Clear Cart</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-primary checkout-btn">Checkout</button>
+      </div>
+    </div>
+  </div>

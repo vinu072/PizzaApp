@@ -1,0 +1,15 @@
+img {
+    height: 7%;
+    width: 7%;
+}
+.fill
+{
+  flex: 0.95 0.95 auto;
+}
+.nav-link{
+  color: white;
+}
+.btn-warning{
+  color: white;
+
+}

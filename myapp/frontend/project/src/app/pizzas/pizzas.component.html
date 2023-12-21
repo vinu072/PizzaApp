@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6" *ngFor="let piz of pizzas">
+      <div class="card shadow">
+        <img [src]="piz.image" class="card-img-top equal-image"  class="card-img-top" align="center">
+        <div class="card-body">
+          <h5 class="card-title">{{ piz.name }}
+            <img src="./assets/veg-icon.png" class="icon" *ngIf="piz.type === 'veg'">
+            <img src="./assets/non-veg-icon.png" class="icon" *ngIf="piz.type === 'nonveg'">
+            <p class="card-text"> {{ piz.price| currency:'INR' }}</p>
+          </h5>
+          <p class="card-text">{{ piz.description }}</p>
+          <p class="card-text">Ingredients: {{ piz.ingredients }}</p>
+          <p class="card-text">Toppings: {{ piz.topping }}</p>
+        </div>
+        <button class="btn btn-warning" (click)="addtocart(piz)" routerLink="/Ingredients">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
